@@ -11,3 +11,12 @@ Next.js 기본 개념들 공부
 - layouts
 - API routes
 - getStaticProps / getServerSideProps / getStaticPaths
+
+## jest-tutorial
+
+jest 공부
+
+- toBe vs toEqual vs toStrictEqual
+- 비동기 테스팅
+- 테스트 전후 작업 (beforeAll, afterAll, beforeEach, afterEach)
+- Mock Functions
