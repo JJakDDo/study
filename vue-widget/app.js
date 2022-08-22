@@ -6,7 +6,12 @@ const app = Vue.createApp({
       age: 45,
     };
   },
-  template: "<p>{{title}} - {{author}} - {{age}}</p>",
+  methods: {
+    changeTitle(title) {
+      //this.title = "Words of Radiance";
+      this.title = title;
+    },
+  },
 });
 
 app.mount("#app");
