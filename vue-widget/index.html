@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+      .box {
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <h1>Hello, Vue :)</h1>
@@ -27,6 +37,18 @@
           성능상 v-show가 더 좋다. DOM에 직접적으로 추가하고 삭제하는거보다 css로 처리하는게 성능에 좋음
       -->
       <div v-show="showBooks">currently showing books</div>
+
+      <br />
+
+      <!-- other click events -->
+      <div class="box" @mouseover="handleEvent($event, 5)">
+        mouseover (enter)
+      </div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">double click</div>
+      <div class="box" @mousemove="handleMousemove">
+        position - {{ x }} {{ y }}
+      </div>
     </div>
 
     <script src="app.js"></script>
