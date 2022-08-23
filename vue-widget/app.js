@@ -12,16 +12,19 @@ const app = Vue.createApp({
           title: "name of the wind1",
           author: "patrick rothfuss",
           img: "assets/1.jpg",
+          isFav: true,
         },
         {
           title: "name of the wind2",
           author: "patrick rothfuss",
           img: "assets/2.jpg",
+          isFav: false,
         },
         {
           title: "name of the wind3",
           author: "patrick rothfuss",
           img: "assets/3.jpg",
+          isFav: true,
         },
       ],
       url: "http//www.google.com",
@@ -44,6 +47,13 @@ const app = Vue.createApp({
     handleMousemove(e) {
       this.x = e.offsetX;
       this.y = e.offsetY;
+    },
+    toggleFav(index) {
+      this.books[index].isFav = !this.books[index].isFav;
+      //console.log(this.books);
+    },
+    toggleFav2(book) {
+      book.isFav = !book.isFav;
     },
   },
 });
