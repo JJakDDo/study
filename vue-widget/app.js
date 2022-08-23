@@ -8,10 +8,23 @@ const app = Vue.createApp({
       x: 0,
       y: 0,
       books: [
-        { title: "name of the wind1", author: "patrick rothfuss" },
-        { title: "name of the wind2", author: "patrick rothfuss" },
-        { title: "name of the wind3", author: "patrick rothfuss" },
+        {
+          title: "name of the wind1",
+          author: "patrick rothfuss",
+          img: "assets/1.jpg",
+        },
+        {
+          title: "name of the wind2",
+          author: "patrick rothfuss",
+          img: "assets/2.jpg",
+        },
+        {
+          title: "name of the wind3",
+          author: "patrick rothfuss",
+          img: "assets/3.jpg",
+        },
       ],
+      url: "http//www.google.com",
     };
   },
   methods: {
