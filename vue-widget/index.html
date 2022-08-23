@@ -22,7 +22,12 @@
     <div id="app">
       <!-- v-if로 하면 DOM 트리에 아예 추가가 되지 않는다. 렌더링이 아예안됨-->
       <div v-if="showBooks">
-        <p>{{title}} - {{author}} - {{age}}</p>
+        <ul>
+          <li v-for="book in books">
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+          </li>
+        </ul>
       </div>
 
       <button v-on:click="age++">Increase age</button>

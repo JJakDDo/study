@@ -7,6 +7,11 @@ const app = Vue.createApp({
       age: 45,
       x: 0,
       y: 0,
+      books: [
+        { title: "name of the wind1", author: "patrick rothfuss" },
+        { title: "name of the wind2", author: "patrick rothfuss" },
+        { title: "name of the wind3", author: "patrick rothfuss" },
+      ],
     };
   },
   methods: {
