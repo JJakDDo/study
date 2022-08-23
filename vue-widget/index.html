@@ -49,13 +49,14 @@
     <h1>Hello, Vue :)</h1>
     <div id="app">
       <a v-bind:href="url">google</a>
+
       <!-- 아래는 v-bind 숏컷 -->
       <a :href="url">google</a>
       <!-- v-if로 하면 DOM 트리에 아예 추가가 되지 않는다. 렌더링이 아예안됨-->
       <div v-if="showBooks">
         <ul>
           <li
-            v-for="(book, index) in books"
+            v-for="(book, index) in filteredBooks"
             :class="{ fav: book.isFav}"
             @click="toggleFav2(book)"
           >
