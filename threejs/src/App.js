@@ -1,6 +1,7 @@
 import { Physics } from "@react-three/cannon";
-import { Sky } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 import { Cubes } from "./components/Cubes";
 import { FPV } from "./components/FPV";
 import { Ground } from "./components/Ground";
@@ -12,14 +13,17 @@ function App() {
   return (
     <>
       <Canvas>
-        <Sky sunPosition={[100, 100, 20]} />
-        <ambientLight intensity={0.5} />
-        <FPV />
-        <Physics>
-          <Player />
-          <Cubes />
-          <Ground />
-        </Physics>
+        <Suspense fallback={null}>
+          <Sky sunPosition={[100, 100, 20]} />
+          <ambientLight intensity={0.5} />
+          <PerspectiveCamera makeDefault position={(0, 1, 5)} />
+          <OrbitControls />
+          <Physics>
+            <Player />
+            <Cubes />
+            <Ground />
+          </Physics>
+        </Suspense>
       </Canvas>
       <div className='absolute centered cursor'>+</div>
       <TextureSelector />
