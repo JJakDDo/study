@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Physics } from "@react-three/cannon";
 import { OrbitControls, PerspectiveCamera, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -10,6 +11,7 @@ import { Player } from "./components/Player";
 import { TextureSelector } from "./components/TextureSelector";
 
 function App() {
+  const [target, setTarget] = useState([0, 0, 0]);
   return (
     <>
       <Canvas>
@@ -17,9 +19,9 @@ function App() {
           <Sky sunPosition={[100, 100, 20]} />
           <ambientLight intensity={0.5} />
           <PerspectiveCamera makeDefault position={(0, 1, 5)} />
-          <OrbitControls />
+          <OrbitControls target={target} />
           <Physics>
-            <Player />
+            <Player setTarget={setTarget} />
             <Cubes />
             <Ground />
           </Physics>

@@ -16,10 +16,10 @@ export const Ground = () => {
       ref={ref}
       onClick={(e) => {
         e.stopPropagation();
-        const [x, y, z] = Object.values(e.point).map((value) =>
-          Math.ceil(value)
-        );
-        addCube(x, y, z);
+        // const [x, y, z] = Object.values(e.point).map((value) =>
+        //   Math.ceil(value)
+        // );
+        // addCube(x, y, z);
       }}
     >
       <planeBufferGeometry attach='geometry' args={[100, 100]} />
