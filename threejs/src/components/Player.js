@@ -40,7 +40,6 @@ export function Player(props) {
     } else if (moveRight) {
       directionOffset = -Math.PI / 2;
     }
-
     return directionOffset;
   };
 
@@ -91,11 +90,11 @@ export function Player(props) {
     }
 
     if (current.current === "Walk") {
+      // 3D 모델과 관련된 Data 들은  group에 있음
       const angleYCameraDirection = Math.atan2(
-        camera.position.x - model.position.x,
-        camera.position.z - model.position.z
+        camera.position.x - group.current.position.x,
+        camera.position.z - group.current.position.z
       );
-
       const directionOffset = getDirectionOffset();
       rotateQuaternion.current.setFromAxisAngle(
         rotateAngle.current,
@@ -117,14 +116,13 @@ export function Player(props) {
       group.current.position.x += moveX;
       group.current.position.z += moveZ;
 
-      console.log(group.current.position.x);
       pos.current = [
         group.current.position.x,
         group.current.position.y,
         group.current.position.z,
       ];
 
-      //updateCameraTarget(moveX, moveZ);
+      updateCameraTarget(moveX, moveZ);
     }
   });
   return (
